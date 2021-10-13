@@ -45,6 +45,11 @@ map %>% addTiles()%>%
   #A?ade un bot?n para ubicar al usuario
   addEasyButton(easyButton(
     icon="fa-crosshairs", title="Locate Me",
-    onClick=JS("function(btn, map){ map.locate({setView: true}); }"), position = "topright")) 
-
+    onClick=JS("function(btn, map){ map.locate({setView: true}); }"), position = "topright")) %>%
+  
+  addEasyprint(options = easyprintOptions(
+    title = 'Imprimir mapa',
+    position = 'bottomleft',
+    exportOnly = TRUE,
+    filename = paste("mapa ",Sys.time(), sep="")))
 
